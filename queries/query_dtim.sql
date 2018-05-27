@@ -1,0 +1,4 @@
+select DATETIME, 100.0*SUM(COUNTER_3)/SUM(COUNTER_2) as PERCENTAGE from counter_table
+where COUNTER_1 > :FILTER_1 and COUNTER_1 <= :FILTER_2
+group by DATETIME
+order by DATETIME
