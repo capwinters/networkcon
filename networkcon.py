@@ -46,9 +46,9 @@ class networkcon(object):
         with open(full_query_path, "r") as query:
             return query.read()
 
-    def get_simple(self):
+    def get_simple(self, query):
         """returns a dataframe in its most basic form"""
-        return pd.read(self.read_query(self.query_path + "\\" + query)
+        return pd.read_sql(self.read_query(self.query_path + "\\" + query)
             , con=self.con)
 
     def get_custom(self, query, params, index_col):
